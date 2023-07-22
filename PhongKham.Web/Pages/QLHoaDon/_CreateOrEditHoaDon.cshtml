@@ -1,0 +1,40 @@
+﻿@using PhongKham.Core.Entities
+@model HoaDon
+<form id="create-form" method="post" asp-page="Index" asp-route-id="@Model.Id" asp-page-handler="CreateOrEdit" onsubmit="return jQueryModalPost(this);">
+
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã bệnh nhân</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="BenhNhanId" name="BenhNhanId" class="form-control" required>
+            <span asp-validation-for="BenhNhanId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã phiếu khám bệnh</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="PhieuKhamBenhId" name="PhieuKhamBenhId" class="form-control" required>
+            <span asp-validation-for="PhieuKhamBenhId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã Toa thuốc</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="ToaThuocId" name="ToaThuocId" value="0" class="form-control">
+            <span asp-validation-for="ToaThuocId" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="form-group justify-content-between">
+        <button type="button" class="btn btn-secondary close-button" data-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary save-button">Lưu Hóa Đơn</button>
+    </div>
+
+</form>
+<script type="text/javascript" language=javascript>
+    $.validator.unobtrusive.parse(document);
+</script>

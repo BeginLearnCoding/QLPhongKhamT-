@@ -1,0 +1,53 @@
+﻿@model PhongKham.Web.ViewModel.ListThuocCart
+@if (Model.CartItems != null && Model.CartItems.Count > 0)// da fix
+{
+<div class="justify-content-center">
+    <table class="table">
+
+        @{decimal total = 0;
+            int stt = 1; }
+        <thead>
+            <tr>
+                <th class=""># </th>
+                <th class="">Tên thuốc </th>
+                <th class="">Đơn giá thuốc</th>
+                <th class="">Số lượng</th>
+                <th class="">Tổng tiền</th>
+                <th class="">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cartitem in Model.CartItems)
+            {
+                var thanhtien = cartitem.Quantity * cartitem.Thuoc.DonGia;
+                total += thanhtien;
+
+                <tr>
+                    <td>@(stt++)</td>
+                    <td>@cartitem.Thuoc.TenThuoc</td>
+                    <td>@(cartitem.Thuoc.DonGia.ToString("n0"))</td>
+                    <td><input asp-for="@cartitem.Quantity" id="@($"quantity-{cartitem.Thuoc.Id}")" /></td>
+                    <td>@(thanhtien.ToString("n0"))</td>
+                    <td>
+                        <form method="post" asp-page-handler="RemoveCartItems">
+                            <input type="hidden" name="thuocId" value="@cartitem.Thuoc.Id" />
+                            <button type="submit" class="btn btn-outline-success">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="4" class="text-right">Total Amount</td>
+                <td>@(total.ToString("n0"))</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+}
+else
+{
+    <p class="text-center"> Danh sách thuốc trống</p>
+}

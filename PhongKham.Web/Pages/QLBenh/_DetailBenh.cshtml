@@ -1,0 +1,19 @@
+﻿@using PhongKham.Core.Entities
+@model Benh
+<form id="create-form" method="post" asp-page="Index" asp-route-id="@Model.Id" asp-page-handler="Detail">
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Tên Bệnh</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="tenBenh" name="tenBenh" class="form-control" readonly>
+            <span asp-validation-for="tenBenh" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mô tả</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="MoTa" name="MoTa" class="form-control" readonly>
+            <span asp-validation-for="MoTa" class="text-danger"></span>
+        </div>
+    </div>
+</form>
+

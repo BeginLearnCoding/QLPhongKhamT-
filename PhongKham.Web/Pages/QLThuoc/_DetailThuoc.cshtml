@@ -1,0 +1,42 @@
+﻿@using PhongKham.Core.Entities
+@model Thuoc
+<form id="create-form" method="post" asp-page="Index" asp-route-id="@Model.Id" asp-page-handler="Detail">
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Tên Thuốc</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="TenThuoc" name="TenThuoc" class="form-control" readonly>
+            <span asp-validation-for="TenThuoc" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Đơn giá</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="DonGia" name="DonGia" class="form-control" readonly>
+            <span asp-validation-for="DonGia" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Cách dùng</label>
+        <div class="col-md-9">
+            <select asp-for="cachDung" name="cachDung" class="form-control" readonly>
+                <option value="1">Cách dùng 1</option>
+                <option value="2">Cách dùng 2</option>
+                <option value="3">Cách dùng 3</option>
+                <option value="4">Cách dùng 4</option>
+            </select>
+            <span asp-validation-for="cachDung" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Đơn vị</label>
+        <div class="col-md-9">
+            <select asp-for="donVi" name="donVi" class="form-control" readonly>
+                <option value="1">Viên</option>
+                <option value="2">Chai</option>
+            </select>
+            <span asp-validation-for="donVi" class="text-danger"></span>
+        </div>
+    </div>
+</form>
+

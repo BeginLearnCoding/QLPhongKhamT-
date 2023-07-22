@@ -1,0 +1,12 @@
+﻿@using PhongKham.Core.Entities
+@model IEnumerable<Benh>
+    <label class="col-md-3 col-form-label">Bệnh</label>
+    <div class="col-md-9">
+        <select name="benhId" id="benhId" class="form-control">
+            <option value="">Select</option>
+            @foreach (var benh in Model)
+            {
+                <option value="@benh.Id">@benh.tenBenh</option>
+            }
+        </select>
+    </div>

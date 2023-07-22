@@ -1,0 +1,58 @@
+﻿@using PhongKham.Core.Entities
+@model PhieuKhamBenh
+<form id="create-form" method="post" asp-page="Index" asp-route-id="@Model.Id" asp-page-handler="CreateOrEdit" onsubmit="return jQueryModalPost(this);">
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã bác sĩ</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="BacSiId" name="BacSiId" class="form-control">
+            <span asp-validation-for="BacSiId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã Bệnh nhân</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="BenhNhanId" name="BenhNhanId" class="form-control">
+            <span asp-validation-for="BenhNhanId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Mã nhân viên</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="NhanVienId" name="NhanVienId" class="form-control">
+            <span asp-validation-for="NhanVienId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Tiền khám</label>
+        <div class="col-md-9">
+            <input type="number" autocomplete="off" asp-for="TienKhamBenh" name="TienKhamBenh" value="40000" readonly class="form-control">
+            <span asp-validation-for="TienKhamBenh" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Ghi chú</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-fo r="GhiChu" name="GhiChu" class="form-control">
+            <span asp-validation-for="GhiChu" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="form-group justify-content-between">
+        <button type="button" class="btn btn-secondary close-button" data-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary save-button">Lưu Phiếu Khám</button>
+    </div>
+
+</form>
+<script type="text/javascript" language=javascript>
+    $.validator.unobtrusive.parse(document);
+</script>

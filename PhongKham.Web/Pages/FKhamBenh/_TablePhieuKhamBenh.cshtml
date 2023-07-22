@@ -1,0 +1,73 @@
+﻿@using PhongKham.Core.Entities
+@model IEnumerable<PhieuKhamBenh>
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Danh sách Phiếu Khám Bệnh</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table" id="pkbTables">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ngày</th>
+                    <th>Bệnh nhân</th>
+                    <th>Bác sĩ</th>
+                    <th>Nhân viên</th>
+                    <th>Loại Bệnh</th>
+                    <th>Tiền Khám Bệnh</th>
+                    <th>Ghi chú</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @if (Model.Count() != 0)
+                {
+
+
+                    @foreach (var phieuKhamBenh in Model)
+                    {
+                        <tr>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@phieuKhamBenh.Id</strong></td>
+                            <td>@phieuKhamBenh.dateTimeKhamBenh</td>
+                            <td>@phieuKhamBenh.benhNhan.TenBenhNhan</td>
+                            <td>@phieuKhamBenh.bacSi.TenBacSi</td>
+                            <td>@phieuKhamBenh.nhanVien.tenNhanVien</td> 
+                            <td>@phieuKhamBenh.Benh.tenBenh</td>
+                            <td>@phieuKhamBenh.TienKhamBenh</td>
+                            <td>@phieuKhamBenh.GhiChu</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=CreateOrEdit&id=@phieuKhamBenh.Id','Chỉnh sửa')">
+                                            <i class="bx bx-edit-alt me-1"></i>
+                                            Cập nhập
+                                        </a>
+                                        <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=Detail&id=@phieuKhamBenh.Id','Chi tiết')">
+                                            <i class="bx bx-edit-alt me-1"></i>
+                                            Chi tiết
+                                        </a>
+                                        <form class="dropdown-item d-inline" method="post" asp-page="Index" asp-route-id="@phieuKhamBenh.Id" asp-page-handler="Delete" onsubmit="return jQueryModalDelete(this)">
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="bx bx-trash me-1"></i> Xóa
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<!--/ Basic Bootstrap Table -->
+<script>
+    $(document).ready(function () {
+        $("#pkbTables").DataTable();
+    });
+</script>
+

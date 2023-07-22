@@ -1,0 +1,29 @@
+﻿@page
+@model PhongKham.Web.Pages.QLHoaDon.IndexModel
+@{
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="col-sm-12" style="padding:20px">
+        <a onclick="jQueryModalGet('?handler=CreateOrEdit','Tạo Hóa đơn')" class="btn bg-success">
+            Create
+        </a>
+        <a id="reload" class="btn bg-warning">
+            Reload
+        </a>
+    </div>
+    <div id="viewAll" class="card-body table-responsive"> </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#viewAll').load('?handler=ViewAllPartial');
+        });
+        $(function () {
+            $('#reload').on('click', function () {
+                $('#viewAll').load('?handler=ViewAllPartial');
+            });
+        });
+    </script>
+}

@@ -1,0 +1,62 @@
+﻿@using PhongKham.Core.Entities
+@model IEnumerable<HoaDon>
+
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Danh sách Hóa đơn</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table" id="lichHenTables">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ngày xuất HĐ</th>
+                    <th>Mã Phiếu khám bệnh</th>
+                    <th>Mã bệnh bệnh nhân</th>
+                    <th>Mã toa thuốc</th>
+                    <th>Tổng thanh toán</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @if (Model.Count() != 0)
+                {
+
+
+                    @foreach (var hd in Model)
+                    {
+                <tr>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@hd.Id</strong></td>
+                    <td>@hd.dateTimeHD</td>
+                    <td>@hd.PhieuKhamBenhId</td>
+                    <td>@hd.BenhNhanId</td>
+                    <td>@hd.ToaThuocId</td>
+                    <td>@hd.TongThanhToan</td>
+              
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=Detail&id=@hd.Id','Chi tiết hóa đơn')">
+                                    <i class="bx bx-edit-alt me-1"></i>
+                                    Chi tiết
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<!--/ Basic Bootstrap Table -->
+<script>
+    $(document).ready(function () {
+        $("#lichHenTables").DataTable();
+    });
+</script>
+

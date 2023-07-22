@@ -1,0 +1,56 @@
+﻿@using PhongKham.Core.Entities
+@model IEnumerable<ToaThuoc>
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Danh sách Toa Thuốc</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table" id="toaThuocTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ngày</th>
+                    <th>Mã phiếu khám bệnh</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @if (Model.Count() != 0)
+                {
+
+
+                    @foreach (var toaThuoc in Model)
+                    {
+                        <tr>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@toaThuoc.Id</strong></td>
+                            <td>@toaThuoc.dataTimeToaThuoc</td>
+                            <td> @toaThuoc.PhieuKhamBenhId</td>
+                            <td>
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=Detail&id=@toaThuoc.Id','Chi tiết Thuốc')">
+                                        <i class="bx bx-edit-alt me-1"></i>
+                                        Chi tiết
+                                    </a>
+                                    <form class="dropdown-item d-inline" method="post" asp-page="Index" asp-route-id="@toaThuoc.Id" asp-page-handler="Delete" onsubmit="return jQueryModalDelete(this)">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="bx bx-trash me-1"></i> Xóa
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<!--/ Basic Bootstrap Table -->
+<script>
+    $(document).ready(function () {
+        $("#toaThuocTable").DataTable();
+    });
+</script>

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PhongKham.Core.Entities
+{
+    public class BenhNhan
+    {
+        [Key]
+        public int Id { get; set; }
+        public string TenBenhNhan { get; set; }
+        public GioiTinh gioiTinh { get; set; }
+        public int sdtBN { get; set; }
+        public string dChiBN { get; set; }
+        public ICollection<PhieuKhamBenh> phieuKhamBenhs { get; set; }
+    }
+
+    public enum GioiTinh
+    {
+        Nam = 1,Nu = 2
+    }
+}
