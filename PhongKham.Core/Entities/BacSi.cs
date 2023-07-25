@@ -14,6 +14,6 @@ namespace PhongKham.Core.Entities
         public int sdtBS { get; set; }
         public string TenBacSi { get; set; }
         public string diaChiBS { get; set; }
-        public ICollection<PhieuKhamBenh> phieuKhamBenhs { get; set; }
+        public ICollection<PhieuKhamBenh> PhieuKhamBenhs { get; } = new List<PhieuKhamBenh>();
     }
 }

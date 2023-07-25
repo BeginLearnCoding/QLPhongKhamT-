@@ -2,7 +2,6 @@ C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\bin\Debug\net5.0\PhongKham.Core.dep
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\bin\Debug\net5.0\PhongKham.Core.dll
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\bin\Debug\net5.0\ref\PhongKham.Core.dll
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\bin\Debug\net5.0\PhongKham.Core.pdb
-C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\obj\Debug\net5.0\PhongKham.Core.csproj.AssemblyReference.cache
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\obj\Debug\net5.0\PhongKham.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\obj\Debug\net5.0\PhongKham.Core.AssemblyInfoInputs.cache
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Core\obj\Debug\net5.0\PhongKham.Core.AssemblyInfo.cs

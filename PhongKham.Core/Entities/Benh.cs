@@ -13,5 +13,6 @@ namespace PhongKham.Core.Entities
         [Required(ErrorMessage = "Tên bệnh không được trống !")]
         public string tenBenh { get; set; }
         public string MoTa { get; set; }
+        public ICollection<PhieuKhamBenh> phieuKhamBenhs { get; } = new List<PhieuKhamBenh>();
     }
 }

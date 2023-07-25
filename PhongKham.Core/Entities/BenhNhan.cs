@@ -15,7 +15,8 @@ namespace PhongKham.Core.Entities
         public GioiTinh gioiTinh { get; set; }
         public int sdtBN { get; set; }
         public string dChiBN { get; set; }
-        public ICollection<PhieuKhamBenh> phieuKhamBenhs { get; set; }
+        public ICollection<PhieuKhamBenh> PhieuKhamBenhs { get; } = new List<PhieuKhamBenh>();
+        public ICollection<HoaDon> HoaDons { get; } = new List<HoaDon>();
     }
 
     public enum GioiTinh

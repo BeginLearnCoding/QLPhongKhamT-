@@ -28,18 +28,18 @@
                         <tr>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@phieuKhamBenh.Id</strong></td>
                             <td>@phieuKhamBenh.dateTimeKhamBenh</td>
-                            <td>@phieuKhamBenh.benhNhan.TenBenhNhan</td>
-                            <td>@phieuKhamBenh.bacSi.TenBacSi</td>
-                            <td>@phieuKhamBenh.nhanVien.tenNhanVien</td> 
+                            <td>@phieuKhamBenh.BenhNhan.TenBenhNhan</td>
+                            <td>@phieuKhamBenh.BacSi.TenBacSi</td>
+                            <td>@phieuKhamBenh.NhanVien.tenNhanVien</td> 
                             <td>@phieuKhamBenh.Benh.tenBenh</td>
                             <td>@phieuKhamBenh.TienKhamBenh</td>
                             <td>@phieuKhamBenh.GhiChu</td>
                             <td>
                                 <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
-                                    <div class="dropdown-menu">
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=CreateOrEdit&id=@phieuKhamBenh.Id','Chỉnh sửa')">
                                             <i class="bx bx-edit-alt me-1"></i>
                                             Cập nhập
@@ -55,6 +55,7 @@
                                         </form>
                                     </div>
                                 </div>
+
                             </td>
                         </tr>
                     }

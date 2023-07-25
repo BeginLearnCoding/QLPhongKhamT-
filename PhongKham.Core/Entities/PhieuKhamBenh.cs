@@ -14,28 +14,25 @@ namespace PhongKham.Core.Entities
         public int Id { get; set; }
         public DateTime dateTimeKhamBenh { get; set; }
         //Ai khám
-        [ForeignKey("BenhNhanId")]
 
-        public int? BenhNhanId { get; set; }
-        public BenhNhan benhNhan { get; set; }
+        public int BenhNhanId { get; set; }
+        public BenhNhan BenhNhan { get; set; } = null!;
         //khám bởi ai
-        [ForeignKey("BacSiId")]
 
-        public int? BacSiId { get; set; }
-        public BacSi bacSi { get; set; }
+        public int BacSiId { get; set; }
+        public BacSi BacSi { get; set; } = null!;
         //Tạo bởi ai
-        [ForeignKey("NhanVienId")]
-        public int? NhanVienId { get; set; }
-        public NhanVien nhanVien { get; set; }
+
+        public int NhanVienId { get; set; }
+        public NhanVien NhanVien { get; set; } = null!;
         //Loại bệnh
-        [ForeignKey("BenhId")]
-        public int? BenhId { get; set; }
+
+        public int BenhId { get; set; }
         public Benh Benh { get; set; }
 
-        /*
-               public ToaThuoc? toaThuoc { get; set; }
-        public HoaDon? hoaDon { get; set; }
-         */
+
+        public HoaDon? HoaDon { get; set; }
+        public ToaThuoc? ToaThuoc { get; set; }
 
         public int TienKhamBenh { get; set; }
         public string GhiChu { get; set; }

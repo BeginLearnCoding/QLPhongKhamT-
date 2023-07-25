@@ -44,7 +44,7 @@ namespace PhongKham.Web.Pages.FKhamBenh
         */
         public async Task<PartialViewResult> OnGetViewAllPartial()
         {
-            PhieuKhamBenhs = await _phieuKhamBenhService.GetPhieuKhamBenhsListAsync(bs => bs.bacSi, lh => lh.nhanVien, bn => bn.benhNhan, b => b.Benh);
+            PhieuKhamBenhs = await _phieuKhamBenhService.GetPhieuKhamBenhsListAsync(bs => bs.BacSi, lh => lh.NhanVien, bn => bn.BenhNhan, b => b.Benh);
             return new PartialViewResult
             {
                 ViewName = "_TablePhieuKhamBenh",

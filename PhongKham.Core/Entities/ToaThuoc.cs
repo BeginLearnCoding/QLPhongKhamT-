@@ -13,9 +13,11 @@ namespace PhongKham.Core.Entities
         public int TongTienThuoc { get; set; }
         public string GhiChu { get; set; }
 
-        [ForeignKey("PhieuKhamBenhId")]
-        public int? PhieuKhamBenhId { get; set; }
-        public PhieuKhamBenh phieuKhamBenh { get; set; }
+        public int PhieuKhamBenhId { get; set; }
+        public PhieuKhamBenh PhieuKhamBenh { get; set; } = null!;
+
+
+        public HoaDon? HoaDon { get; set; }
 
         public ICollection<ChiTietToaThuoc> chiTietToaThuocs { get; set; }
     }

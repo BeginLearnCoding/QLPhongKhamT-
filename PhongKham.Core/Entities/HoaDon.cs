@@ -9,23 +9,17 @@ namespace PhongKham.Core.Entities
     {
         public int Id { get; set; }
         public DateTime dateTimeHD { get; set; }
-        
-        [Required]
-        [ForeignKey("PhieuKhamBenhId")]
+
         public int PhieuKhamBenhId { get; set; }
-        public PhieuKhamBenh phieuKhamBenh { get; set; }
-        
-        [ForeignKey("ToaThuocId")]
-        // public int? ToaThuocId { get; set; }
+        public PhieuKhamBenh PhieuKhamBenh { get; set; } = null!;
+
         public int? ToaThuocId { get; set; }
-        public ToaThuoc toaThuoc { get; set; }
+        public ToaThuoc? ToaThuoc { get; set; }
 
         public int TongThanhToan { get; set; }
         
         
-        [Required]
-        [ForeignKey("BenhNhanId")]
         public int BenhNhanId { get; set; }
-        public BenhNhan benhNhan { get; set; }
+        public BenhNhan BenhNhan { get; set; } = null!;
     }
 }

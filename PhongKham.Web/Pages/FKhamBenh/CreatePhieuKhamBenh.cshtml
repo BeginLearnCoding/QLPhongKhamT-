@@ -11,21 +11,21 @@
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Mã bác sĩ</label>
                 <div class="col-md-9">
-                    <input type="number" autocomplete="off" asp-for="AddPKB.BacSiId" name="BacSiId" class="form-control" >
+                    <input type="number" autocomplete="off" asp-for="AddPKB.BacSiId" name="BacSiId" class="form-control">
                     <span asp-validation-for="AddPKB.BacSiId" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Mã Bệnh nhân</label>
                 <div class="col-md-9">
-                    <input type="number" autocomplete="off" asp-for="AddPKB.BenhNhanId" name="BenhNhanId" class="form-control" >
+                    <input type="number" autocomplete="off" asp-for="AddPKB.BenhNhanId" name="BenhNhanId" class="form-control">
                     <span asp-validation-for="AddPKB.BenhNhanId" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Mã nhân viên</label>
                 <div class="col-md-9">
-                    <input type="text" autocomplete="off" asp-for="AddPKB.NhanVienId" name="NhanVienId" class="form-control" >
+                    <input type="text" autocomplete="off" asp-for="AddPKB.NhanVienId" name="NhanVienId" class="form-control">
                     <span asp-validation-for="AddPKB.NhanVienId" class="text-danger"></span>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Tiền khám</label>
                 <div class="col-md-9">
-                    <input type="number" autocomplete="off" asp-for="AddPKB.TienKhamBenh" name="TienKhamBenh" value="40000" readonly class="form-control" >
+                    <input type="number" autocomplete="off" asp-for="AddPKB.TienKhamBenh" name="TienKhamBenh" value="40000" readonly class="form-control">
                     <span asp-validation-for="AddPKB.TienKhamBenh" class="text-danger"></span>
                 </div>
             </div>
@@ -55,11 +55,15 @@
                 </div>
             </div>
             <div class="form-group justify-content-between">
-                <button class="btn btn-secondary close-button" asp-page="Index">Quay về danh sách</button>
                 <button type="submit" class="btn btn-primary save-button" value="Create">Lưu Phiếu Khám</button>
-                <button class="btn btn-success" asp-page="/QLToaThuoc/CreateToaThuoc">Thêm Toa Thuốc</button>
             </div>
+
         </form>
+        <div class="justify-content-between">
+            <a class="btn btn-secondary" asp-area="" asp-page="/FKhamBenh/Index">Quay về</a>
+            <a class="btn btn-success" asp-area="" asp-page="/QLToaThuoc/CreateToaThuoc">Thêm Toa Thuốc</a>
+            <a class="btn btn-danger" asp-area="" asp-page="/QLHoaDon/Index">Thêm Hóa đơn</a>
+        </div>
     </div>
 </div>
 

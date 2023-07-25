@@ -54,9 +54,20 @@ namespace PhongKham.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //PhieuKhamBenh key
+            modelBuilder.Entity<BenhNhan>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.BenhNhan).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<BacSi>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.BacSi).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<NhanVien>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.NhanVien).OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<PhieuKhamBenh>().HasOne(e => e.Benh).WithMany().HasForeignKey(e => e.BenhId).IsRequired();
+            modelBuilder.Entity<HoaDon>().HasOne(e => e.PhieuKhamBenh).WithOne(e => e.HoaDon).HasForeignKey<HoaDon>(e => e.PhieuKhamBenhId).IsRequired();
+            //modelBuilder.Entity<HoaDon>().HasOne(e => e.ToaThuoc).WithOne(e => e.HoaDon).HasForeignKey<ToaThuoc>(e => e.HoaDonId).IsRequired(false);
+            // Hóa đơn có thể có toa thuốc hoặc không.
+            modelBuilder.Entity<HoaDon>().HasOne(p => p.ToaThuoc).WithOne(e => e.HoaDon).HasForeignKey<HoaDon>(e => e.ToaThuocId).IsRequired(false);
+            // Toa thuốc cần có PKB
+            modelBuilder.Entity<ToaThuoc>().HasOne(e => e.PhieuKhamBenh).WithOne(e => e.ToaThuoc).HasForeignKey<ToaThuoc>(e => e.PhieuKhamBenhId).IsRequired();
 
 
         }
-    
+
     }
 }
