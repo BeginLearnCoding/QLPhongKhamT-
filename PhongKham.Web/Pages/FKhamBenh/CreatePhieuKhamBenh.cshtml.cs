@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,6 +15,8 @@ using PhongKham.Web.ViewModel;
 
 namespace PhongKham.Web.Pages.FKhamBenh
 {
+    [Authorize(Roles = "BacSi")]
+    [Authorize(Roles = "NhanVien")]
     public class CreatePhieuKhamBenhModel : PageModel
     {
         private readonly IPhieuKhamBenhService _phieuKhamBenhService;

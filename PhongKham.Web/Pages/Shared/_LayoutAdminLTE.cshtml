@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using PhongKham.Core.Entities
+
+@inject SignInManager<UserAccount> SignInManager
+@inject UserManager<UserAccount> UserManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -7,7 +13,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
@@ -30,13 +36,41 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        <partial name="_NavMenu"/>
-        <partial name="_AsideMenu" />
-        <div class="content-wrapper">
-            @RenderBody()
-        </div>
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <partial name="_NavMenu" />
+            <partial name="_AsideMenuAdmin" />
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        }
+        else if (SignInManager.IsSignedIn(User) && User.IsInRole("BacSi"))
+        {
+            <partial name="_NavMenu" />
+            <partial name="_AsideMenuBacSi" />
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        }
+        else if (SignInManager.IsSignedIn(User) && User.IsInRole("NhanVien"))
+        {
+            <partial name="_NavMenu" />
+            <partial name="_AsideMenuNhanVien" />
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        }
+        else
+        {
+            <partial name="_NavMenu" />
+            <div class="content-wrapper">
+                <h1>Login is required!</h1>
+                @RenderBody()
+            </div>
+        }
+
     </div>
-    <partial name="_Footer"/>
+    <partial name="_Footer" />
     <div class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" id="form-modal">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

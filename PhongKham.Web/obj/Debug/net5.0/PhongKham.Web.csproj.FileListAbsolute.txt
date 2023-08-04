@@ -171,7 +171,6 @@ C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\PhongKham.Web.dll
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\ref\PhongKham.Web.dll
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\PhongKham.Web.pdb
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\PhongKham.Web.genruntimeconfig.cache
-C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_AsideMenu.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_LayoutAdminLTE.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_Footer.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_NavMenu.cshtml.g.cs
@@ -226,3 +225,12 @@ C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identit
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_LoginPartial.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_AsideMenuAdmin.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_AsideMenuBacSi.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\Shared\_AsideMenuNhanVien.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\Index.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\_StatusMessage.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\Add.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\Delete.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\AddUserRole.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Role\User.cshtml.g.cs

@@ -30,12 +30,21 @@ namespace PhongKham.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                var tableName = entityType.GetTableName();
+                if (tableName.StartsWith("AspNet"))
+                {
+                    entityType.SetTableName(tableName.Substring(6));
+                }
+            }
 
         }
+    */
 
-    }*/
-    public class PhongKhamDbContext : DbContext
+
+    public class PhongKhamDbContext : IdentityDbContext<UserAccount>
     {
         public PhongKhamDbContext(DbContextOptions<PhongKhamDbContext> options) : base(options)
         {
@@ -54,20 +63,37 @@ namespace PhongKham.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //PhieuKhamBenh key
             modelBuilder.Entity<BenhNhan>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.BenhNhan).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<BacSi>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.BacSi).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<NhanVien>().HasMany(e => e.PhieuKhamBenhs).WithOne(e => e.NhanVien).OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<PhieuKhamBenh>().HasOne(e => e.Benh).WithMany().HasForeignKey(e => e.BenhId).IsRequired();
+            modelBuilder.Entity<PhieuKhamBenh>().HasOne(e => e.Benh).WithMany(e => e.phieuKhamBenhs).HasForeignKey(e => e.BenhId).IsRequired();
             modelBuilder.Entity<HoaDon>().HasOne(e => e.PhieuKhamBenh).WithOne(e => e.HoaDon).HasForeignKey<HoaDon>(e => e.PhieuKhamBenhId).IsRequired();
             //modelBuilder.Entity<HoaDon>().HasOne(e => e.ToaThuoc).WithOne(e => e.HoaDon).HasForeignKey<ToaThuoc>(e => e.HoaDonId).IsRequired(false);
             // Hóa đơn có thể có toa thuốc hoặc không.
             modelBuilder.Entity<HoaDon>().HasOne(p => p.ToaThuoc).WithOne(e => e.HoaDon).HasForeignKey<HoaDon>(e => e.ToaThuocId).IsRequired(false);
             // Toa thuốc cần có PKB
             modelBuilder.Entity<ToaThuoc>().HasOne(e => e.PhieuKhamBenh).WithOne(e => e.ToaThuoc).HasForeignKey<ToaThuoc>(e => e.PhieuKhamBenhId).IsRequired();
-
+            //Identity
+            OnIdentity(modelBuilder);
 
         }
 
+        private void OnIdentity(ModelBuilder builder)
+        {
+            foreach (var entityType in builder.Model.GetEntityTypes())
+            {
+                var tableName = entityType.GetTableName();
+                if (tableName.StartsWith("AspNet"))
+                {
+                    entityType.SetTableName(tableName.Substring(6));
+                }
+
+            }
+
+        }
     }
 }
+
+
