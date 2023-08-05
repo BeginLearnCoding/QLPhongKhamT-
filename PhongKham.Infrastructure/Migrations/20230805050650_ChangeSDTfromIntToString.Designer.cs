@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhongKham.Infrastructure.Data;
 
 namespace PhongKham.Infrastructure.Migrations
 {
     [DbContext(typeof(PhongKhamDbContext))]
-    partial class PhongKhamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230805050650_ChangeSDTfromIntToString")]
+    partial class ChangeSDTfromIntToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

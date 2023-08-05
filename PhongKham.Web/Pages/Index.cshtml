@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Dashboard</h1>
+                <h1 class="m-0">Báo cáo doanh thu</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -32,9 +32,9 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>@Model.toaThuoc</h3>
 
-                        <p>New Orders</p>
+                        <p>Số Toa Thuốc</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -47,9 +47,9 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>@Model.hoaDon</h3>
 
-                        <p>Bounce Rate</p>
+                        <p>Số lượng hóa đơn</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -62,9 +62,9 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>@Model.phieuKhamBenh</h3>
 
-                        <p>User Registrations</p>
+                        <p>Số lượng Phiếu khám bệnh</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -75,11 +75,18 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
+                @{
+                    int TongTT=0;
+            } 
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>65</h3>
+                        @foreach(var hd in Model.HoaDons)
+            {
+                TongTT += hd.TongThanhToan;
+            }
+                        <h3>@(TongTT.ToString("n0"))</h3>
 
-                        <p>Unique Visitors</p>
+                        <p>Tổng tiền của hóa đơn</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>

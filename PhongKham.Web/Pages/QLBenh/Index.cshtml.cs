@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -12,6 +13,7 @@ using PhongKham.Web.Services;
 
 namespace PhongKham.Web.Pages.QLBenh
 {
+    [Authorize(Roles = "NhanVien")]
     public class IndexModel : PageModel
     {
         private readonly IBenhService _benhService;

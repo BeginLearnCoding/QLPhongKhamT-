@@ -13,7 +13,7 @@ namespace PhongKham.Core.Entities
         [Key]
         public int Id { get; set; }
         public string tenNhanVien { get; set; }
-        public int sdtNV { get; set; }
+        public string sdtNV { get; set; }
         public string dChiNV { get; set; }
         public ICollection<PhieuKhamBenh> PhieuKhamBenhs { get; } = new List<PhieuKhamBenh>();
     }
