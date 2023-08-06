@@ -1,0 +1,47 @@
+﻿@using PhongKham.Core.Entities
+@model BenhNhan
+<form id="create-form" method="post" asp-page="Index" asp-route-id="@Model.Id" asp-page-handler="CreateOrEdit" onsubmit="return jQueryModalPost(this);">
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Tên Bệnh Nhân</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="TenBenhNhan" name="TenBenhNhan" class="form-control" required>
+            <span asp-validation-for="TenBenhNhan" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Sdt Bệnh Nhân</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="sdtBN" name="sdtBN" class="form-control" required>
+            <span asp-validation-for="sdtBN" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Đia chỉ Bệnh Nhân</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="dChiBN" name="dChiBN" class="form-control" required>
+            <span asp-validation-for="dChiBN" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Giới tính</label>
+        <div class="col-md-9">
+            <select asp-for="gioiTinh" name="gioiTinh" class="form-control">
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+            </select>
+            <span asp-validation-for="gioiTinh" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="form-group justify-content-between">
+        <button type="button" class="btn btn-secondary close-button" data-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary save-button">Lưu </button>
+    </div>
+
+</form>
+<script type="text/javascript" language=javascript>
+    $.validator.unobtrusive.parse(document);
+</script>

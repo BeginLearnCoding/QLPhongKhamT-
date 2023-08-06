@@ -29,7 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\QLBenhNhan\" />
     <Folder Include="Pages\QLNhanVien\" />
   </ItemGroup>
 

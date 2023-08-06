@@ -237,3 +237,6 @@ C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Areas\Identit
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBacSi\Index.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBacSi\_CreateOrEditBacSi.cshtml.g.cs
 C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBacSi\_TableBacSi.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBenhNhan\Index.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBenhNhan\_CreateOrEditBenhNhan.cshtml.g.cs
+C:\XT-1\CNPM\CNPM-PhongKham-2\PhongKham.Web\obj\Debug\net5.0\Razor\Pages\QLBenhNhan\_TableBenhNhan.cshtml.g.cs

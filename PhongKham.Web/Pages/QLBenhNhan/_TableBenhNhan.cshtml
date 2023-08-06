@@ -1,0 +1,59 @@
+﻿@using PhongKham.Core.Entities
+@model IEnumerable<BenhNhan>
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Danh sách Bệnh Nhân</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table" id="benhTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tên Bệnh nhân</th>
+                    <th>Giới tính</th>
+                    <th>Sdt Bệnh nhân</th>
+                    <th>Đ/c Bệnh nhân</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @if (Model.Count() != 0)
+                {
+
+
+                    @foreach (var bn in Model)
+                    {
+                <tr>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@bn.Id</strong></td>
+                    <td>@bn.TenBenhNhan</td>
+                    <td>@bn.gioiTinh.ToString()</td>
+                    <td>@bn.sdtBN</td>
+                    <td>@bn.dChiBN</td>
+                    <td>
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item btn btn-outline-primary" onclick="jQueryModalGet('?handler=CreateOrEdit&id=@bn.Id','Sửa Bệnh')">
+                                <i class="bx bx-edit-alt me-1"></i>
+                                Cập nhập
+                            </a>
+                            <form class="dropdown-item d-inline" method="post" asp-page="Index" asp-route-id="@bn.Id" asp-page-handler="Delete" onsubmit="return jQueryModalDelete(this)">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="bx bx-trash me-1"></i> Xóa
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<!--/ Basic Bootstrap Table -->
+<script>
+    $(document).ready(function () {
+        $("#benhTable").DataTable();
+    });
+</script>

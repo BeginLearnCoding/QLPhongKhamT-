@@ -13,8 +13,7 @@ using PhongKham.Web.Services;
 
 namespace PhongKham.Web.Pages.QLToaThuoc
 {
-    [Authorize(Roles = "BacSi")]
-    [Authorize(Roles = "NhanVien")]
+    [Authorize(Roles = "BacSi,NhanVien")]
     public class IndexModel : PageModel
     {
         private readonly IToaThuocService _toaThuocService;
