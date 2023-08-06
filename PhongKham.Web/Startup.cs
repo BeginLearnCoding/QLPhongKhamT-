@@ -95,6 +95,10 @@ namespace PhongKham.Web
             services.AddTransient<IBenhNhanRepository, BenhNhanRepository>();
             services.AddTransient<IBenhNhanService, BenhNhanSevice>();
 
+            //NhanVien
+            services.AddTransient<INhanVienRepository, NhanVienRepository>();
+            services.AddTransient<INhanVienService, NhanVienService>();
+
             //UnitOfWork service
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //Session for ToaThuoc
