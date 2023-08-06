@@ -15,8 +15,7 @@ using PhongKham.Web.ViewModel;
 
 namespace PhongKham.Web.Pages.FKhamBenh
 {
-    [Authorize(Roles = "BacSi")]
-    [Authorize(Roles = "NhanVien")]
+    [Authorize(Roles = "NhanVien,BacSi")]
     public class CreatePhieuKhamBenhModel : PageModel
     {
         private readonly IPhieuKhamBenhService _phieuKhamBenhService;

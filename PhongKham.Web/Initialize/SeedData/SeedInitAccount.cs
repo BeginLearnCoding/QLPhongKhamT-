@@ -40,7 +40,7 @@ namespace PhongKham.Web.Initialize.SeedData
             {
 
                 Name = "NhanVien",
-                NormalizedName = "AMDIN"
+                NormalizedName = "NHANVIEN"
             };
             await CreateRoleAsync(AdminRole);
             await CreateRoleAsync(BacSiRole);
@@ -66,10 +66,10 @@ namespace PhongKham.Web.Initialize.SeedData
             };
             var NhanVienUser = new UserAccount
             {
-                UserName = "nhanVien",
+                UserName = "nhanvien",
                 NormalizedUserName = "NHANVIEN",
                 Email = "nhanvien@cnpm.com",
-                NormalizedEmail = "ADMIN@CNPM.COM",
+                NormalizedEmail = "NHANVIEN@CNPM.COM",
                 EmailConfirmed = true,
             };
             await CreateUserAsync(AdminUser, Password);

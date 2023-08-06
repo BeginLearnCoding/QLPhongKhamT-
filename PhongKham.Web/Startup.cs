@@ -86,6 +86,10 @@ namespace PhongKham.Web
             services.AddTransient<IBenhRepository, BenhRepository>();
             services.AddTransient<IBenhService, BenhService>();
 
+            //BacSi
+            services.AddTransient<IBacSiRepository, BacSiRepository>();
+            services.AddTransient<IBacSiService, BacSiService>();
+
             //UnitOfWork service
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             //Session for ToaThuoc

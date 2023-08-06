@@ -15,7 +15,8 @@ using PhongKham.Web.ViewModel;
 
 namespace PhongKham.Web.Pages.FKhamBenh
 {
-    [Authorize]
+    
+    [Authorize(Roles = "NhanVien,BacSi")]
     public class IndexModel : PageModel
     {
         private readonly IPhieuKhamBenhService _phieuKhamBenhService;

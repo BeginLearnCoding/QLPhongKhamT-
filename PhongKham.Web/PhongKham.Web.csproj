@@ -31,7 +31,6 @@
   <ItemGroup>
     <Folder Include="Pages\QLBenhNhan\" />
     <Folder Include="Pages\QLNhanVien\" />
-    <Folder Include="Pages\QLBacSi\" />
   </ItemGroup>
 
 </Project>
