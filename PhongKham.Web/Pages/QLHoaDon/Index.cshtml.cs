@@ -13,7 +13,7 @@ using PhongKham.Web.Services;
 
 namespace PhongKham.Web.Pages.QLHoaDon
 {
-    [Authorize(Roles = "NhanVien")]
+    [Authorize(Roles = "Admin,NhanVien")]
     public class IndexModel : PageModel
     {
         private readonly IHoaDonService _hoaDonService;

@@ -13,7 +13,7 @@ using PhongKham.Web.Services;
 
 namespace PhongKham.Web.Pages.QLBenh
 {
-    [Authorize(Roles = "NhanVien")]
+    [Authorize(Roles = "NhanVien,Admin")]
     public class IndexModel : PageModel
     {
         private readonly IBenhService _benhService;
